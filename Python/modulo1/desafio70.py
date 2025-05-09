@@ -1,5 +1,5 @@
 '''
-xercício Python 70: Crie um programa que leia o nome e o preço de vários produtos. O programa deverá perguntar se o usuário vai continuar ou não. No final, mostre:
+Exercício Python 70: Crie um programa que leia o nome e o preço de vários produtos. O programa deverá perguntar se o usuário vai continuar ou não. No final, mostre:
 
 A) qual é o total gasto na compra.
 
@@ -8,25 +8,19 @@ B) quantos produtos custam mais de R$1000.
 C) qual é o nome do produto mais barato. 
 
 '''
+soma = 0
 cont = 0
-m_mais_20 = 0 
-homens = 0 
-maiores = 0
+produto_barato = 999999
 while True:
-    print('-='*30)
-    sexo = str(input('Digite o sexo: [H/M]: ')).upper().strip()[0]
-    idade = int(input(f'Digite a idade da {cont+1}° pessoa: '))
-    if sexo == 'H':
-        homens += 1
-    if idade > 18:
-        maiores += 1
-    if sexo == 'M' and idade < 20:
-        m_mais_20 += 1
-    print('-='*30)
-    print('VOCÊ DESEJA CONTINUAR?')
-    opcao = str(input('[SIM/NAO]: ')).upper().strip()[0]
-    cont += 1
+    nome = str(input('Digite o nome do produto: '))
+    preco = float(input('Digite o preço do produto: '))
+    soma += preco
+    if preco < produto_barato:
+        produto_barato_nome = nome
+        produto_barato = preco
+    if preco > 1000:
+        cont += 1
+    opcao = str(input('Você deseja continuar?: [S/N]')).upper().strip()[0]
     if opcao == 'N':
-        print(f'Ao todo foram {maiores} pessoas maiores de 18 anos\n{homens} homens\n{m_mais_20} mulheres menores de 20 anos')
+        print(f'O gasto total nas compras foi: {soma}R$\n{cont} produtos custam mais de 1000R$\nO produto mais barato é {produto_barato_nome}, custando {produto_barato}')
         break
-    
