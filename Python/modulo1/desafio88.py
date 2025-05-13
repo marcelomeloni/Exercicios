@@ -23,7 +23,9 @@ for c in range(0,jogos):
         palpite = random.randint(1,60)
         palpites.append(palpite)
     jogo.append(palpites[:])
+j = 0   
+while j < len(jogo):
+    print(f'{j+1}°JOGO: {jogo[j]}')
+    j += 1
     
-#Saida dos jogos
-print(jogo)
         
