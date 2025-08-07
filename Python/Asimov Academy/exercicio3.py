@@ -15,3 +15,4 @@ elif (soma_p > soma_j):
 else:
     print("Os gastos foram iguais")
    
+# Saida: Os gastos foram iguais
