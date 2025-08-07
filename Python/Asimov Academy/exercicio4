@@ -1,0 +1,18 @@
+# Exercício de Python 4: maior e menor palavra
+
+palavras = ["python", "asimov", "código", "web", "programação"]
+maior_palavra = 0
+menor_palavra = 999
+maior = ""
+menor = ""
+
+for i in range(0,len(palavras)):
+    if (len(palavras[i])) > maior_palavra:
+        maior_palavra = len(palavras[i])
+        maior = palavras[i]
+    if (len(palavras[i])) < menor_palavra:
+        menor_palavra = len(palavras[i])
+        menor = palavras[i]
+        
+print(f'A menor palavra é : {menor}')
+print(f'A maior palavra é : {maior}')
